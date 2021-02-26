@@ -25,15 +25,62 @@
         android:name="android.hardware.camera.front.autofocus"
         android:required="false" />
 
+    <meta-data
+        android:name="android.support.PARENT_ACTIVITY"
+        android:value=".MainActivity" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:usesCleartextTraffic="true"
         android:theme="@style/Theme.Tapis_project_v0">
-        <activity android:name=".OpenCVCameraActivity"></activity>
-        <activity android:name=".MainActivity">
+
+
+        <service
+            android:name=".serviceImpl.proprieteServiceImpl.DeleteProprieteServiceImpl"
+            android:enabled="true"
+            android:exported="true"></service>
+        <service
+            android:name=".serviceImpl.userMotifServiceImpl.UserMotifServiceImpl"
+            android:enabled="true"
+            android:exported="true" />
+        <service
+            android:name=".serviceImpl.motifServiceImpl.MotifServiceImpl"
+            android:enabled="true"
+            android:exported="true" />
+        <service
+            android:name=".serviceImpl.proprieteServiceImpl.PropeiterServiceImpl"
+            android:enabled="true"
+            android:exported="true" />
+        <service
+            android:name=".serviceImpl.motifServiceImpl.AddMotifServiceImpl"
+            android:enabled="true"
+            android:exported="true" />
+        <service
+            android:name=".serviceImpl.userMotifServiceImpl.FindByImageServiceImpl"
+            android:enabled="true"
+            android:exported="true" />
+        <service
+            android:name=".serviceImpl.userMotifServiceImpl.UserMotifServiceImpl"
+            android:enabled="true"
+            android:exported="true" />
+        <service
+            android:name=".serviceImpl.userMotifServiceImpl.GetUsersMotifsServiceImpl"
+            android:enabled="true"
+            android:exported="true" />
+        <service
+            android:name=".serviceImpl.motifServiceImpl.SaveServiceImpl"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name=".ui.AdminHomepageActivity"></activity>
+        <activity android:name=".ui.RegisterActivity" />
+        <activity android:name=".ui.MainActivity" />
+        <activity android:name=".ui.OpenCVCameraActivity" />
+        <activity android:name=".ui.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
